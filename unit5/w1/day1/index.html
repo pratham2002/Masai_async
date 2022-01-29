@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            margin: 5rem;
+            /* border: 1px solid black; */
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">Mini JS DataType</h2>
+    <div id="buttons" style="display: flex;justify-content: center;gap:2rem;padding: 1rem;">
+    </div>
+    <div style="width: 30%;margin: auto;">
+        <ul id="points"></ul>
+    </div>
+    <script type="text/javascript">
+        let arr = ["Objects","Arrays","Functions","Strings","Number","Null","Undefined"]
+let butHold = document.getElementById("buttons")
+var res =document.getElementById("points")
+res.style.width = "100%"
+for (let i = 0; i < arr.length; i++) {
+    var butt = document.createElement("button")
+    butt.id = arr[i]
+    butt.onclick =()=>handleClick(arr[i])
+    butt.style = "padding: 0.5rem;border-radius: 0.5rem;background-color: lightblue"
+    butt.textContent = arr[i]  
+    butHold.appendChild(butt)
+}
+
+function handleClick(val){
+    // console.log(val);
+    switch (val) {
+        case `Objects`:
+            // console.log("object");
+            Objects()
+            break;
+        case `Arrays`:
+            // console.log("object");
+            Arrays()
+            break;
+        case `Functions`:
+            // console.log("object");
+            Functions()
+            break;
+        case `Null`:
+            // console.log("object");
+            Null()
+            break;
+        case `Strings`:
+            // console.log("object");
+            Strings()
+            break;
+        case `Undefined`:
+            // console.log("object");
+            Undefined()
+            break;
+        case `Number`:
+            // console.log("object");
+            Numbers()
+            break;
+    
+        default:
+
+            break;
+    }
+    // this.val()
+}   
+// var ul = document.createElement("ul")
+
+function Objects(){
+    var res =document.getElementById("points")
+    res.innerHTML="Objects"
+
+    var li = document.createElement("li")
+    li.textContent = "The Object class represents one of JavaScript's data types. It is used to store various keyed collections and more complex entities. "
+    res.appendChild(li)
+
+    var li = document.createElement("li")
+    li.textContent = "If the value is null or undefined, it will create and return an empty object."
+    res.appendChild(li)
+
+    var li = document.createElement("li")
+    li.textContent = "Otherwise, it will return an object of a Type that corresponds to the given value."
+    res.appendChild(li)
+    
+    var li = document.createElement("li")
+    li.textContent = "If the value is an object already, it will return the value."
+    res.appendChild(li)
+    
+    var a = document.createElement("a")
+    a.href = "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object"
+    a.textContent = "For More Info Click here"
+    a.target= "_blank"
+    res.appendChild(a)
+
+    console.log("Objects Called");
+}
+function Arrays(){
+    var res =document.getElementById("points")
+    res.innerHTML="Arrays"
+
+    var li = document.createElement("li")
+    li.textContent = "The JavaScript Array class is a global object that is used in the construction of arrays; which are high-level, list-like objects."
+    res.appendChild(li)
+
+    var li = document.createElement("li")
+    li.textContent = "Arrays are list-like objects whose prototype has methods to perform traversal and mutation operations."
+    res.appendChild(li)
+
+    var li = document.createElement("li")
+    li.textContent = "Neither the length of a JavaScript array nor the types of its elements are fixed."
+    res.appendChild(li)
+    
+    var li = document.createElement("li")
+    li.textContent = "Since an array's length can change at any time, and data can be stored at non-contiguous locations in the array, JavaScript arrays are not guaranteed to be dense; this depends on how the programmer chooses to use them. In general, these are convenient characteristics; but if these features are not desirable for your particular use, you might consider using typed arrays."
+    res.appendChild(li)
+    
+    var a = document.createElement("a")
+    a.href = "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"
+    a.textContent = "For More Info Click here"
+    a.target= "_blank"
+    res.appendChild(a)
+    console.log("Arrays Called");
+}
+function Numbers(){
+    var res =document.getElementById("points")
+    res.innerHTML="Number"
+
+    
+    var li = document.createElement("li")
+    li.textContent = "Number is a primitive wrapper object used to represent and manipulate numbers like 37 or -9.25."
+    res.appendChild(li)
+
+    var li = document.createElement("li")
+    li.textContent = "The Number constructor contains constants and methods for working with numbers. Values of other types can be converted to numbers using the Number() function."
+    res.appendChild(li)
+
+    var li = document.createElement("li")
+    li.textContent = "A number literal like 37 in JavaScript code is a floating-point value, not an integer."
+    res.appendChild(li)
+    
+    var li = document.createElement("li")
+    li.textContent = "Number may also be expressed in literal forms like 0b101, 0o13, 0x0A."
+    res.appendChild(li)
+    
+    var a = document.createElement("a")
+    a.href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number"
+    a.textContent = "For More Info Click here"
+    a.target= "_blank"
+    res.appendChild(a)
+
+
+    console.log("Numbers Called");
+}
+function Strings(){
+    var res =document.getElementById("points")
+    res.innerHTML="String"
+
+    var li = document.createElement("li")
+    li.textContent = "The String object is used to represent and manipulate a sequence of characters."
+    res.appendChild(li)
+
+    var li = document.createElement("li")
+    li.textContent = "Strings are useful for holding data that can be represented in text form."
+    res.appendChild(li)
+
+    var li = document.createElement("li")
+    li.textContent = "Some of the most-used operations on strings are to check their length, to build and concatenate them using the + and += string operators, checking for the existence or location of substrings with the indexOf() method, or extracting substrings with the substring() method."
+    res.appendChild(li)
+    
+    var li = document.createElement("li")
+    li.textContent = "Strings can be created as primitives, from string literals, or as objects, using the String() constructor:"
+    res.appendChild(li)
+    
+    var a = document.createElement("a")
+    a.href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"
+    a.textContent = "For More Info Click here"
+    a.target= "_blank"
+    res.appendChild(a)
+
+    console.log("Strings Called");
+}
+function Null(){
+    var res =document.getElementById("points")
+    res.innerHTML="Null"
+
+    var li = document.createElement("li")
+    li.textContent = "The value null represents the intentional absence of any object value."
+    res.appendChild(li)
+
+    var li = document.createElement("li")
+    li.textContent = "It is one of JavaScript's primitive values and is treated as falsy for boolean operations."
+    res.appendChild(li)
+
+    var li = document.createElement("li")
+    li.textContent = "When checking for null or undefined, beware of the differences between equality (==) and identity (===) operators, as the former performs type-conversion."
+    res.appendChild(li)
+    
+    var a = document.createElement("a")
+    a.href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null"
+    a.textContent = "For More Info Click here"
+    a.target= "_blank"
+    res.appendChild(a)
+
+    
+    console.log("Null Called");
+}
+function Undefined(){
+    var res =document.getElementById("points")
+    res.innerHTML="Undefined"
+    
+    var li = document.createElement("li")
+    li.textContent = "The global undefined property represents the primitive value undefined. It is one of JavaScript's primitive types."
+    res.appendChild(li)
+
+    var li = document.createElement("li")
+    li.textContent = "Undefined is a property of the global object. That is, it is a variable in global scope. The initial value of undefined is the primitive value undefined."
+    res.appendChild(li)
+
+    var li = document.createElement("li")
+    li.textContent = "In modern browsers (JavaScript 1.8.5 / Firefox 4+), undefined is a non-configurable, non-writable property, per the ECMAScript 5 specification. "
+    res.appendChild(li)
+    
+    var a = document.createElement("a")
+    a.href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined"
+    a.textContent = "For More Info Click here"
+    a.target= "_blank"
+    res.appendChild(a)
+
+    console.log("Undefined Called");
+}
+function Functions(){
+    var res =document.getElementById("points")
+    res.innerHTML="Functions"
+
+    var li = document.createElement("li")
+    li.textContent = "Functions are one of the fundamental building blocks in JavaScript. A function in JavaScript is similar to a procedure—a set of statements that performs a task or calculates a value, but for a procedure to qualify as a function, it should take some input and return an output where there is some obvious relationship between the input and the output. To use a function, you must define it somewhere in the scope from which you wish to call it."
+    res.appendChild(li)
+
+    var li = document.createElement("li")
+    li.textContent = "A function definition (also called a function declaration, or function statement) consists of the function keyword, followed by:"
+    res.appendChild(li)
+
+    var li = document.createElement("li")
+    li.textContent = "The name of the function."
+    res.appendChild(li)
+    
+    var li = document.createElement("li")
+    li.textContent = "A list of parameters to the function, enclosed in parentheses and separated by commas."
+    res.appendChild(li)
+
+    var li = document.createElement("li")
+    li.textContent = "The JavaScript statements that define the function, enclosed in curly brackets, {...}."
+    res.appendChild(li)
+    
+    var a = document.createElement("a")
+    a.href = "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions"
+    a.textContent = "For More Info Click here"
+    a.target= "_blank"
+    res.appendChild(a)
+
+
+    console.log("Functions Called");
+}
+    </script>
+</body>
+</html>
