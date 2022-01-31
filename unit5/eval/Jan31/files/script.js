@@ -6,7 +6,7 @@ function fetchBooks(){
     // .then(res=>console.log(res))
 }
 
-async function printDetails(){
+export async function printDetails(){
     try{
         let res =await fetchBooks()
         // console.log(res);

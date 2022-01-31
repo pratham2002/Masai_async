@@ -1,3 +1,5 @@
+import Update from "./update.js";
+
 export default function displayData(res){
     console.log(res);
     let resDiv = document.createDocumentFragment()
@@ -5,13 +7,23 @@ export default function displayData(res){
             const {book,author,id,comments} = x
             let div = document.createElement("div")
             div.className = "resultsDiv"
+            div.id = id
             let name = document.createElement("h3")
             name.textContent = `Book : ${book}`
             let authorN = document.createElement("h5")
             authorN.textContent = `Author : ${author}`
             let comment = document.createElement("p")
             comment.textContent = `comments: ${[...comments]}`
-            div.append(name,authorN,comment)
+            const upBtn = document.createElement("button")
+            upBtn.textContent ="Update Comment"
+            upBtn.onclick = ()=>Update(book,author,comments,id)
+            const cInput = document.createElement("input")
+            cInput.placeholder ="Enter Here to add comment"
+            cInput.id=`commentInput${id}`
+            // const deBtn = document.createElement("button")
+            // deBtn.textContent ="Delete Book"
+            // deBtn.onclick = Update
+            div.append(name,authorN,comment,cInput,upBtn)
             resDiv.appendChild(div)
     }
 
