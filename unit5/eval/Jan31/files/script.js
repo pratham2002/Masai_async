@@ -10,7 +10,10 @@ async function printDetails(){
     try{
         let res =await fetchBooks()
         // console.log(res);
-        await displayData(res)
+        let results = displayData(res)
+        console.log(results);
+        let output = document.getElementById("result")
+        output.append(results)
     }
     catch(err){
         console.error(err)

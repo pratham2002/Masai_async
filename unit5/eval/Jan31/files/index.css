@@ -1,4 +1,13 @@
 .results{
     text-align: center;
+    text-align: center;
     font-weight: 400;
+}
+
+.resultsDiv{
+    justify-content: center;
+    width: 50%;
+    padding: 10px;
+    margin: 15px auto;
+    border: 1px solid black;
 }
