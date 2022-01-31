@@ -1,4 +1,13 @@
-import Update from "./update.js";
+import Update, { Delete } from "./update.js";
+export function AddData(){
+    const cInput = document.createElement("input")
+            cInput.placeholder ="Enter Here to add comment"
+            cInput.id=`commentInput${id}`
+    const upBtn = document.createElement("button")
+            upBtn.textContent ="Update Comment"
+            upBtn.onclick = ()=>Update(comments,id)
+
+}
 
 export default function displayData(res){
     console.log(res);
@@ -16,13 +25,13 @@ export default function displayData(res){
             comment.textContent = `comments: ${[...comments]}`
             const upBtn = document.createElement("button")
             upBtn.textContent ="Update Comment"
-            upBtn.onclick = ()=>Update(book,author,comments,id)
+            upBtn.onclick = ()=>Update(comments,id)
             const cInput = document.createElement("input")
             cInput.placeholder ="Enter Here to add comment"
             cInput.id=`commentInput${id}`
-            // const deBtn = document.createElement("button")
-            // deBtn.textContent ="Delete Book"
-            // deBtn.onclick = Update
+            const deBtn = document.createElement("button")
+            deBtn.textContent ="Delete Book"
+            deBtn.onclick = Delete
             div.append(name,authorN,comment,cInput,upBtn)
             resDiv.appendChild(div)
     }
