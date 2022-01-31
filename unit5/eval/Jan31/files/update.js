@@ -1,8 +1,11 @@
 export default async function Update(comments,id){
             // window.alert(`${comment} Update Clicked`)  
             // window.alert(`${id} Update Clicked`)  
+            
             let comment = document.getElementById(`commentInput${id}`).value
+            console.log(comment);
             comments.push(comment)
+            if(comment){
             let data = {
                     "comments" :[...comments],
             }
@@ -13,13 +16,12 @@ export default async function Update(comments,id){
                   },
                 body:JSON.stringify(data),
             });
-
+          }
 }
 export  async function Add(book,author,comments,id){
             // window.alert(`${comment} Update Clicked`)  
             // window.alert(`${id} Update Clicked`)  
             let comment = document.getElementById(`commentInput${id}`).value
-            if(comment!==""){
                 comments.push(comment)
                 let data = {
                         "comments" :[...comments],
@@ -31,7 +33,7 @@ export  async function Add(book,author,comments,id){
                       },
                     body:JSON.stringify(data),
                 });
-            }
+        
 
 }
 export  async function Delete(id){
