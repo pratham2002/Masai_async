@@ -19,7 +19,7 @@ export default async function Update(comments,id){
           }
 }
 export  async function Add(book,author,comments,id){
-            // window.alert(`${comment} Update Clicked`)  
+            // window.alert(`${comment} Update Clicked`)
             // window.alert(`${id} Update Clicked`)  
             let comment = document.getElementById(`commentInput${id}`).value
                 comments.push(comment)
