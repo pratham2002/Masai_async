@@ -7,6 +7,9 @@ module.exports = {
     filename: "build.js",
   },
   module: {
-    rules: [{ test: /\.css$/, use: ["style-loader", "css-loader"] }],
-},
+    rules: [
+      { test: /\.css$/, use: ["style-loader", "css-loader"] },
+      { test: /\.js$/, use: ["babel-loader"], exclude: /node_modules/ },
+    ],
+  },
 };
