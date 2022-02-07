@@ -1,9 +1,13 @@
 import { useState } from "react"
 
-function TodoInput(){
+function TodoInput({handleCreateTodo}){
     const [text,setText] = useState("")
     const handleChange = (e)=>{
         setText(e.target.value)
+    }
+    const handleAdd=()=>{
+        handleCreateTodo(text.toLocaleUpperCase())
+        setText("")
     }
     return(
         <>
@@ -14,7 +18,7 @@ function TodoInput(){
                 value={text}
                 onChange={handleChange}
       />
-      <button onClick={()=>console.log(text)}>ADD</button>
+      <button onClick={()=>handleAdd()}>ADD</button>
     </div>
         </>
     )
