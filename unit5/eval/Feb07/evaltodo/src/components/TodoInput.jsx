@@ -13,6 +13,7 @@ function TodoInput({handleCreateTodo}){
         <>
         <div>
              <input
+                autoFocus="True"
                 type="text"
                 placeholder="Add to List"
                 value={text}
