@@ -1,17 +1,7 @@
 import { useEffect, useState } from "react"
 import ProductListItem from "./ProductListItem"
 
-export default function ProductList() {
-    const [data,setData]=useState([])
-    
-
-    useEffect(()=>{
-        fetch("http://localhost:3001/products")
-           .then(res=>res.json())
-           .then(res=>{
-               setData(res)
-           })
-    },[])
+export default function ProductList({data}) {
   return (
       <>
     <div>ProductList</div>
