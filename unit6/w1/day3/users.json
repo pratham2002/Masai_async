@@ -1,0 +1,21 @@
+[{
+    "id": 1,"first_name": "Yancy","last_name": "D'Alesco","email": "ydalesco0@cbslocal.com","gender": "Genderfluid","ip_address": "164.215.194.36","age": 65},
+    {
+        "id": 3,
+        "first_name": "Aditya",
+        "last_name": "Agrawal",
+        "email": "lmcclay2p@masai.cz",
+        "gender": "male",
+        "ip_address": "192.168.0.103",
+        "age": 12
+    },
+    {
+        "id": 2,
+        "first_name": "Pratham",
+        "last_name": "Agrawal",
+        "email": "lmcclay2p@mapy.cz",
+        "gender": "male",
+        "ip_address": "192.168.0.102",
+        "age": 19
+    }
+]
