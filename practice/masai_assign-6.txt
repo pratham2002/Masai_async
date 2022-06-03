@@ -1,0 +1,69 @@
+Explain in brief what is node js?
+ans:
+Node.js (Node) is an open source development platform for executing JavaScript code server-side. Node is useful for developing applications that require a persistent connection from the browser to the server and is often used for real-time applications such as chat, news feeds and web push notifications.
+
+How is node js non blocking?
+ans:Node.js is based on an event-driven non-blocking I/O modelIt refers to the blocking of further operation until the current operation finishes. Blocking methods are executed synchronously. Synchronously means that the program is executed line by line. The program waits until the called function or the operation returns.Example readFileSync().
+It refers to the program that does not block the execution of further operations. Non-Blocking methods are executed asynchronously. Asynchronously means that the program may not necessarily execute line by line. The program calls the function and move to the next operation and does not wait for it to return.Example readFile()
+
+
+How is Node js having high IO throughput?
+ans:A nodejs application can be architectured just fine to include non-I/O things and is not just suited for big data applications (in fact big data has nothing to do with it at all).
+
+A default, simple implementation of Node.js performs best when your application is not CPU intensive and instead spends most of its time doing I/O (input/output) tasks such as reading/writing to a database, read/writing from files, reading/sending network data and so on. It's not about big data, it's about what does the server spend most of its time doing.
+
+
+What are CPU intensive tasks?
+ans: They are complex user actions that eat up more RAM. A few of such processes can shut down your server entirely.
+
+Naturally, you want  to make sure that your app or website is ‘smart’ enough to handle different kinds of tasks, for each individual user request.Sorting, search, graph traversal, matrix multiply are all CPU operations, a process is CPU-intensive or not it depends on how much and how frequent are their execution
+
+
+How can you end up blocking your main thread in node.js?
+ans:Blocking is when the execution of additional JavaScript in the Node.js process must wait until a non-JavaScript operation completes. This happens because the event loop is unable to continue running JavaScript while a blocking operation is occurring.You may have heard about this concept called non-blocking I/O and how Node.js uses it to solve the problem of blocking calls and to run super-fast, but what non-blocking I/O is, and why does it help? We will understand this later but first, you need to understand how servers and threads work along the way and how servers handle requests, Before moving onto node.js let’s talk about servers and threads as an overview.
+
+What is the event loop?
+What are different phases in event loop?
+ans:The event loop is the secret behind JavaScript’s asynchronous programming. JS executes all operations on a single thread, but using a few smart data structures, it gives us the illusion of multi-threading.The call stack is responsible for keeping track of all the operations in line to be executed. Whenever a function is finished, it is popped from the stack..The event queue is responsible for sending new functions to the stack for processing. It follows the queue data structure to maintain the correct sequence in which all operations should be sent for execution.Whenever an async function is called, it is sent to a browser API. These are APIs built into the browser. Based on the command received from the call stack, the API starts its own single-threaded operation.
+
+What is process.tick?
+ans:Every time the event loop takes a full trip, we call it a tick.
+
+What is the difference between setTimeout and setInterval?
+ans:setTimeout allows us to run a function once after the interval of time. setInterval allows us to run a function repeatedly, starting after the interval of time, then repeating continuously at that interval
+
+How can you make a network request with http module from the backend?
+ans:
+cont http = require("https")
+http.get(url,(res)=>{}).on("error",()=>{})
+
+
+How can you create your own events?
+ans:
+// To assign event
+const startEvent = new Event("start");
+
+// To trigger the event Listener
+document.addEventListener("start", () => {
+    console.log("The start event was triggered")
+});
+
+What are clusters?
+ans:The cluster is a collection of small child processes (" workers ") of a single parent process in Node . Using the fork () method of the Node child_processes module, workers are created as child processes of a parent process, whose task is, instead, that of controlling them.
+
+What is the difference between readFile and readFileSync?
+ans:In fs. readFile() method, we can read a file in a non-blocking asynchronous way, but in fs. readFileSync() method, we can read files in a synchronous way,
+
+What are CORS? How do you configure them? Why do you need them?
+ans:Cross-Origin Resource Sharing (CORS) is a protocol that enables scripts running on a browser client to interact with resources from a different origin. This is useful because, thanks to the same-origin policy followed by XMLHttpRequest and fetch, JavaScript can only make calls to URLs that live on the same origin as the location where the script is running. Most of the time, a script running in the user's browser would only ever need to access resources on the same origin (think about API calls to the same backend that served the JavaScript code in the first place). So the fact that JavaScript can't normally access resources on other origins is a good thing for security.
+
+In this context, "other origins" means the URL being accessed differs from the location that the JavaScript is running from, by having:
+
+a different scheme (HTTP or HTTPS)
+a different domain
+a different port
+However, there are legitimate scenarios where cross-origin access is desirable or even necessary. For example, if you're running a React SPA that makes calls to an API backend running on a different domain. Web fonts also rely on CORS to work.
+
+What is rate limiting?
+ans:Rate limiting is a strategy for limiting network traffic. It puts a cap on how often someone can repeat an action within a certain timeframe.
+

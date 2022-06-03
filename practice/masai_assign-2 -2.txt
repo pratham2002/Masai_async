@@ -1,0 +1,71 @@
+Explain briefly what happens when you hit a url? explain DNS lookup
+
+ans:
+DNS(Domain Name System) is a database that maintains the name of the website (URL) and the particular IP address it links to. Every single URL on the internet has a unique IP address assigned to it.The IP address belongs to the computer which hosts the server of the website we are requesting to access. For example, www.google.com has an IP address of 209.85.227.104. so it is similar if you type in www.google.com or https://209.85.227.104. you will reach the same destination.
+
+What is a URLs full form? Explain what a url is and the four parts it consists of The protocol in use The hostname of the server The location of the file The arguments to the file
+ans:
+URL protocols include HTTP (Hypertext Transfer Protocol) and HTTPS (HTTP Secure) for web resources, mail to for email addresses, FTP for files on a File Transfer Protocol (FTP) server, and telnet for a session to access remote computers. Most URL protocols are followed by a colon and two forward slashes; "mail to" is followed only by a colon.
+The host name identifies the host that holds the resource. For example, www.example.com. A server provides services in the name of the host, but hosts and servers do not have a one-to-one mapping
+The location identifies the specific resource in the host that the web client wants to access. For example, /software/htp/cics/index.html./
+For arguments a query string is used, it follows the path component, and provides a string of information that the resource can use for some purpose (for example, as parameters for a search or as data to be processed).for example, term=bluebird&source=browser-search.
+
+What is HTTP protocol?
+ans:HTTP is a protocol for fetching resources such as HTML documents. It is the foundation of any data exchange on the Web and it is a client-server protocol, which means requests are initiated by the recipient, usually the Web browser. A complete document is reconstructed from the different sub-documents fetched, for instance, text, layout description, images, videos, scripts, and more.
+
+What is TCP Protocol?
+ans:TCP stands for Transmission Control Protocol a communications standard that enables application programs and computing devices to exchange messages over a network. It is designed to send packets across the internet and ensure the successful delivery of data and messages over networks.
+
+Explain all the different HTTP methods?
+ans:The GET method requests a representation of the specified resource. Requests using GET should only retrieve data.
+The POST method submits an entity to the specified resource, often causing a change in state or side effects on the server.
+The PUT method replaces all current representations of the target resource with the request payload.
+The DELETE method deletes the specified resource.
+The PATCH method applies partial modifications to a resource.
+
+What are HTTP headers?
+ans:
+HTTP headers let the client and the server pass additional information with an HTTP request or response. 
+Request headers contain more information about the resource to be fetched, or about the client requesting the resource.
+Response headers hold additional information about the response, like its location or about the server providing it.
+Representation headers contain information about the body of the resource, like its MIME type, or encoding/compression applied.
+Payload headers contain representation-independent information about payload data, including content length and the encoding used for transport.
+
+What are some HTTP response codes? what does it mean? 2xx, 3xx, 4xx, 5xx
+ans:
+HTTP status codes are three-digit responses from the server to the browser-side request.
+2xx - Successful: The request was successful and the browser has received the expected information 
+3xx (Redirection): You have been redirected and the completion of the request requires further action
+4xx (Client Error): The website or the page could not be reached, either the page is unavailable or the request contains bad syntax 
+5xx (Server Error): While the request appears to be valid, the server could not complete the request
+
+What are web sockets?
+ans:
+WebSocket is bidirectional, a full-duplex protocol that is used in the same scenario of client-server communication, unlike HTTP it starts from ws:// or wss://. It is a stateful protocol, which means the connection between client and server will keep alive until it is terminated by either party (client or server). After closing the connection by either of the client and server, the connection is terminated from both ends. 
+
+How is web sockets different from HTTP?
+ans:
+WebSocket is bidirectional, a full-duplex protocol that is used in the same scenario of client-server communication, unlike HTTP it starts from ws:// or wss://. It is a stateful protocol, which means the connection between client and server will keep alive until it is terminated by either party (client or server). After closing the connection by either of the client and server, the connection is terminated from both ends. where as
+an HTTP is unidirectional where the client sends the request and the server sends the response.each request is associated with a corresponding response, after sending the response the connection gets closed, each HTTP or HTTPS request establish the new connection to the server every time and after getting the response the connection gets terminated by itself. 
+
+What is HTTPS?
+ansL
+Hypertext transfer protocol secure (HTTPS) is the secure version of HTTP, which is the primary protocol used to send data between a web browser and a website. HTTPS is encrypted in order to increase security of data transfer.
+
+What is Cross Origin Resource Sharing? ( CORS ) Why do we need it?
+ans:
+Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources. For security reasons, browsers restrict cross-origin HTTP requests initiated from scripts. For example, XMLHttpRequest and the Fetch API follow the same-origin policy. This means that a web application using those APIs can only request resources from the same origin the application was loaded from unless the response from other origins includes the right CORS headers.
+
+What does Access-Control-Allow-Origin header do?
+ans:
+The Access-Control-Allow-Origin header is included in the response from one website to a request originating from another website, and identifies the permitted origin of the request. A web browser compares the Access-Control-Allow-Origin with the requesting website's origin and permits access to the response if they match.
+
+What is clickjacking? How do you fix it?
+ans:
+Clickjacking is an attack that fools users into thinking they are clicking on one thing when they are actually clicking on another. Its other name, user interface (UI) redressing, better describes what is going on. Users think they are using a web page’s normal UI, but in fact there is a hidden UI in control; in other words, the UI has been redressed. When users click something they think is safe, the hidden UI performs a different action.X-Frame-Options is a response header. Developers can use it to protect their site against clickjacking. It can be used to indicate whether or not a browser should be allowed to render a page in an Iframe by have its value set as any of the following:
+X-FRAME-OPTIONS: DENY,SAMEORIGIN,ALLOW-FROM uri
+
+
+What do CDN or Content Delivery Networks do? When do you need a CDN?
+ans:
+A content delivery network (CDN) refers to a geographically distributed group of servers which work together to provide fast delivery of Internet content. A CDN allows for the quick transfer of assets needed for loading Internet content including HTML pages, javascript files, stylesheets, images, and videos.

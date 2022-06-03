@@ -1,0 +1,22 @@
+ What are IIFE?
+An IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined. 
+
+What is currying?
+Currying is a transformation of functions that translates a function from callable as f(a, b, c) into callable as f(a)(b)(c).
+
+
+Write a program to throttle using closures.
+ans:
+function throttler( callback, duration ){
+
+    let prev =0;
+    return callback=>{
+        let now = new Date.getTime()
+        if(now-prev>duration){
+            return callback;
+        }
+    }  
+}
+document.addEventListener("element", throttler( callback, 1000 )
+
+```

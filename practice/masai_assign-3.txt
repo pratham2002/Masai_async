@@ -1,0 +1,55 @@
+how to add comments on css?
+ans:/* ..... */
+
+Why do we use pseudo-class?
+ans:
+A CSS pseudo-class is a keyword added to a selector that specifies a special state of the selected element(s). For example, :hover can be used to change a button's color when the user's pointer hovers over it.
+
+What method allows an element to be moved from its current position?
+ans: postion:static
+
+what properties does flex model have?
+ans:
+flex-grow, shrink,basis;
+
+What is the difference between flex and grids?
+ans:
+The basic difference between CSS Grid Layout and CSS Flexbox Layout is that flexbox was designed for layout in one dimension - either a row or a column. Grid was designed for two-dimensional layout - rows, and columns at the same time.
+
+Give an example where we have to use grids and where you have to use flexbox?
+ans: grids are to be used where information is to be showed in particular tabular format.
+while flex is to be used whre in an information is to be showed in any one type of direction.
+
+
+What are combinators? give examples of how you can use them
+ans:
+they combine other selectors in a way that gives them a useful relationship to each other and the location of content in the document.
+types: '>' child combinator
+'+' adjacent sibling
+' ' decendent combinator
+'~' general sibling
+
+What does object-fit do?
+ans:
+The object-fit CSS property sets how the content of a replaced element, such as an <img> or <video> , should be resized to fit its container.
+
+What does rotate do?
+ans:The rotate() CSS function defines a transformation that rotates an element around a fixed point on the 2D plane, without deforming it
+
+What does @media do?
+ans:
+@media helps us to define what should the UI look like when in diffrent screen sizes. how should it react.
+The @media rule is used in media queries to apply different styles for different media types/devices. Media queries can be used to check many things, such as: width and height of the viewport. width and height of the device.
+
+How can you select every alternate elements in a list of elements using css?:
+ans:
+:nth-child(even/odd)
+
+What is the ranking of selectors with respect to specificity
+ans:inline styles, IDs, classes, attributes, and elements
+
+how can we apply same styles to multiple selectors?
+ans:
+by using a ',' ex: p,div,a{color : red}
+red text color will be applied for every p,div,a tag in the document;
+

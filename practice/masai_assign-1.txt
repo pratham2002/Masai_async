@@ -1,0 +1,92 @@
+what is hoisting?
+Ans: hoisting is to a javascript thing in which it reads full code and then moves all the variable declrares before the code
+
+scoping?
+Ans: life of a varible that has been decalred till where and when it can be used.
+
+How are var, let const different?
+ans: var declarations are globally scoped or function scoped, while let & const are block scoped. var variables can be updated and re-declared within its scope,const cannot be updated nor re decalred, where as let variables can be updated but not re-declared
+
+
+What are the two main differences in arrow functions?
+Ans: arrow function helps us to do the similar task in smaller lines of codes, they do not have their own this function.
+
+Does Call apply bind work for arrow functions?
+Ans: since arrow function does not have their own this call apply bind doesnt work on arrow function.
+
+What does call apply bind do?
+Ans:The call() and apply() are very similar methods. They both execute the bound function on the object immediately. The bind() method does not execute the function right away. Instead, it creates and returns a bound function that can be executed later.
+
+What are closures?
+ans:a closure gives you access to an outer function's scope from an inner function
+
+What is event bubbling?
+ans:event bubling is the event where the first the inner most element is trriged followed till outermost part.
+
+What is event loop?
+ans:With the help of event loop javascript becomes an asynchronous language...using som of the things like call stack, event queue it can perform asynchronous events with the help of setTimeout, setInterval, we know that js is a single threaded language but with the help of event loop it excutes code in a slightly differnet method which is very helpful.
+
+Explain promises to a 5 year old, with simple examples
+ans: promise is something that is to have a result, it can be a success, failure, or pending,. Like for example when a kid promise to complete his hw before the promised time. It will have 3 stages that 1.success => hw compelted before time or on time, 2. pending=> still doing the hw 3.failure=>time is excceded, wasnt able to complete his hw.
+
+what does async await mean?
+ans:It simply allows us to write promises based code as if it was synchronous and it checks that we are not breaking the execution thread. It operates asynchronously via the event-loop. Async functions will always return a value. It makes sure that a promise is returned and if it is not returned then javascript automatically wraps it in a promise which is resolved with its value.
+Await function is used to wait for the promise. It could be used within the async block only
+
+What does the this keyword mean?
+ans:
+ This keyword refers to an object that is executing the current piece of code. It references the object that is executing the current function. if a regular function it si know as gloabal this.
+
+What are classes? what are getters and setters?
+ans:Classes are a template for creating objects. They encapsulate data with code to work on that data. Classes in JS are built on prototypes but also have some syntax .getters and setters are used to get or set the properties values. “get” is the keyword utilized to define a getter method for retrieving the property value, whereas “set” defines a setter method for changing the value of a specific property.
+
+How do you declare private and static variables in classes?
+ans:
+class MyClass {
+  // class constructor, equivalent to
+  // the function body of a constructor
+  constructor() {
+    const privateVariable = 'private value'; // Private variable at the constructor scope
+    this.publicVariable = 'public value'; // Public property
+
+    };
+  }
+
+
+What is currying?
+ans:
+Currying is a transformation of functions that translates a function from callable as f(a, b, c) into callable as f(a)(b)(c).
+example:
+function curry(f) { 
+  return function(a) {
+    return function(b) {
+      return f(a, b);
+    };
+  };
+}
+
+program to flatten an array.
+ans:
+let input = [ 1, [ 2, 3 ], [ 3 ], [ [ [ 5]],  6]  ]
+// output => [ 1, 2, 3, 3, 5, 6 ]
+
+const flatArr = (array) => {
+  const flat = [];
+  const handleFlat = (arr) => {
+    let counter = 0
+    while (counter < arr.length) {
+      const val = arr[counter];
+      if (Array.isArray(val)) {
+        handleFlat(val);
+      } else {
+        flat.push(val)
+      }
+      counter++;
+    }
+  }
+  handleFlat(array);
+  return flat;
+}
+
+let output = flatArr(input)
+console.log(output)
