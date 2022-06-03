@@ -23,11 +23,12 @@ const handleSubmit=()=>{
         .then(res=>{
             localStorage.setItem("token",res.token)
         })
+        .catch(e=>window.alert(e))
 
         
     }
     catch(e){
-        console.log(e);
+        window.alert(e)
     }
 }
   return (
